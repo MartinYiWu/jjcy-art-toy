@@ -6,7 +6,7 @@
     <modules>
         <module>designer-toys-userapi</module>
         <module>designer-toys-userdao</module>
-        <module>designer-toys-userdao</module>
+        <module>designer-toys-userservice</module>
     </modules>
     <parent>
         <groupId>com.jjcy.designer.toys</groupId>
