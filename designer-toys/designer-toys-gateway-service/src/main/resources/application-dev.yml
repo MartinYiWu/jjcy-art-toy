@@ -1,0 +1,116 @@
+spring:
+  # 配置Nacos注册中心
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: public
+        group: DEFAULT_GROUP
+
+    gateway:
+      # 全局路由配置
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+            allowCredentials: true
+  
+  # Spring Boot Actuator配置
+  boot:
+    admin:
+      client:
+        url: http://localhost:8080
+
+# Actuator配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+    info:
+      enabled: true
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+    tags:
+      application: ${spring.application.name}
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+      percentiles:
+        http.server.requests: 0.5, 0.9, 0.95, 0.99
+      # 路由配置
+      routes:
+        # 服务1路由
+        - id: dt-service1
+          uri: lb://dt-service1
+          predicates:
+            - Path=/api/service1/**
+          filters:
+            - StripPrefix=1
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 20
+                key-resolver: '#{@userKeyResolver}'
+            - name: CircuitBreaker
+              args:
+                name: service1CircuitBreaker
+                fallbackUri: forward:/fallback/service1
+        
+        # 服务2路由
+        - id: dt-service2
+          uri: lb://dt-service2
+          predicates:
+            - Path=/api/service2/**
+          filters:
+            - StripPrefix=1
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 20
+                key-resolver: '#{@userKeyResolver}'
+            - name: CircuitBreaker
+              args:
+                name: service2CircuitBreaker
+                fallbackUri: forward:/fallback/service2
+        
+        # 静态资源路由
+        - id: static-resources
+          uri: file://${user.dir}/static/
+          predicates:
+            - Path=/static/**
+          filters:
+            - StripPrefix=0
+      # 网关超时配置
+      httpclient:
+        connect-timeout: 5000
+        response-timeout: 10s
+      # 路由刷新时间
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      # 负载均衡配置
+      loadbalancer:
+        ribbon:
+          enabled: false
+

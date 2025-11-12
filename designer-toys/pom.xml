@@ -29,28 +29,42 @@
 
     <modules>
         <module>designer-toys-gateway-service</module>
+        <module>designer-toys-user-service</module>
+        <module>designer-toys-product-service</module>
+        <module>designer-toys-order-service</module>
+        <module>designer-toys-payment-service</module>
+        <module>designer-toys-logistics-service</module>
     </modules>
 
     <dependencies>
-       <!-- <dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-openfeign-core</artifactId>
         </dependency>
 
         <dependency>
@@ -69,18 +83,18 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        &lt;!&ndash; Spring Boot Actuator (可选，用于健康检查) &ndash;&gt;
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-        &lt;!&ndash; Lombok &ndash;&gt;
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
-        </dependency>-->
+        </dependency>
 
     </dependencies>
 

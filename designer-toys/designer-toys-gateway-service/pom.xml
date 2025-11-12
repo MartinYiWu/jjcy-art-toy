@@ -17,36 +17,40 @@
     <description>Designer Toys Gateway Service</description>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>2021.0.5</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version>
     </properties>
 
     <dependencies>
-        <!-- SpringCloud Gateway -->
+      <!--  &lt;!&ndash; SpringCloud Gateway &ndash;&gt;
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
 
-        <!-- SpringCloud Alibaba Nacos Discovery -->
+        &lt;!&ndash; SpringCloud Alibaba Nacos Discovery &ndash;&gt;
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
-        <!-- Spring Boot Actuator (可选，用于健康检查) -->
+        &lt;!&ndash; Spring Boot Actuator (可选，用于健康检查) &ndash;&gt;
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-        <!-- Lombok -->
+        &lt;!&ndash; Lombok &ndash;&gt;
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
-        </dependency>
+        </dependency>-->
+
     </dependencies>
 
     <dependencyManagement>
