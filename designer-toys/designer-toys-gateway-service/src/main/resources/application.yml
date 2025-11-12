@@ -1,0 +1,35 @@
+# 应用配置
+spring:
+  application:
+    name: designer-toys-gateway-service
+  
+  # 配置Nacos注册中心
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: 8a1ba84e-1fbb-4f2d-ad46-7f0d75c550d5
+        group: DEFAULT_GROUP
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 8a1ba84e-1fbb-4f2d-ad46-7f0d75c550d5
+        group: DEFAULT_GROUP
+        auto-refresh: true
+        prefix: ${spring.application.name}
+        file-extension: yaml
+
+
+
+# 服务器配置
+server:
+  port: 8081
+
+# Spring Boot Actuator配置（可选，用于健康检查）
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
