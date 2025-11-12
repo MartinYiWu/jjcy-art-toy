@@ -3,14 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.jjcy.designer.toys</groupId>
-        <artifactId>designer-toys</artifactId>
+        <artifactId>designer-toys-user-service</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+    <artifactId>designer-toys-userdao</artifactId>
+    <name>designer-toys-userdao</name>
 
-    <artifactId>designer-toys-logistics-service</artifactId>
-    <packaging>war</packaging>
-    <name>designer-toys-logistics-service</name>
-    <url>http://maven.apache.org</url>
 
     <dependencies>
         <dependency>
@@ -21,6 +19,6 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>designer-toys-logistics-service</finalName>
+        <finalName>designer-toys-userdao</finalName>
     </build>
 </project>

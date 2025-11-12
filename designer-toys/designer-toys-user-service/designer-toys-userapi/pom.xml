@@ -9,7 +9,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>designer-toys-user-request</artifactId>
+    <artifactId>designer-toys-userapi</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
