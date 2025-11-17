@@ -25,7 +25,8 @@
         <spring-cloud.version>2020.0.5</spring-cloud.version>
         <!-- Spring Cloud Alibaba 版本 -->
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
-
+        <!-- Spring Cloud OpenFeign 3.0.6 -->
+        <spring-cloud.openfeign.version>3.0.6</spring-cloud.openfeign.version>
         <!-- 其他依赖版本 -->
         <mysql-connector.version>8.0.28</mysql-connector.version>
         <druid.version>1.2.8</druid.version>
@@ -97,6 +98,14 @@
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
             </dependency>
+
+            <!-- OpenFeign -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${spring-cloud.openfeign.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
