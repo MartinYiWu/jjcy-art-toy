@@ -2,28 +2,27 @@ server:
   port: 9091
 
 spring:
-  gateway:
-    discovery:
-      # 启用服务发现
-      locator:
-        enabled: true
-    routes:
-      # 用户服务路由
-      - id: user-service-route
-        uri: lb://designer-toys-user-service
-        predicates:
-          - Path=/user/**
-      # 商品服务路由
-      - id: product-service-route
-        uri: lb://designer-toys-product-service
-        predicates:
-          - Path=/product/**
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        # 用户服务路由
+        - id: user-service-route
+          uri: lb://designer-toys-user-service
+          predicates:
+            - Path=/user/**
+        # 商品服务路由
+        - id: product-service-route
+          uri: lb://designer-toys-product-service
+          predicates:
+            - Path=/product/**
 
 management:
   endpoints:
+    health:
+        show-details: always
     web:
       exposure:
         include: '*'
-  endpoint:
-    health:
-      show-details: always

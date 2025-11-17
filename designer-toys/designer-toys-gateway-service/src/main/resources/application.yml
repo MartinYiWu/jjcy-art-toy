@@ -20,6 +20,13 @@ spring:
   profiles:
     active: dev
 logging:
+
   level:
     com.alibaba.cloud.nacos: debug
     com.designer.toys: debug
+    org.springframework: warn
+
+# 启用调试模式（核心组件输出DEBUG日志）
+debug: true
+# 启用跟踪模式（更详细日志）
+trace: true
