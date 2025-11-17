@@ -1,6 +1,6 @@
 spring:
   application:
-    name: designer-toys-gateway-service
+    name: designer-toys-user-service
   cloud:
     bootstrap:
       enabled: true
@@ -19,7 +19,7 @@ spring:
         timeout: 3000
   profiles:
     active: dev
+
 logging:
   level:
     com.alibaba.cloud.nacos: debug
-    com.designer.toys: debug

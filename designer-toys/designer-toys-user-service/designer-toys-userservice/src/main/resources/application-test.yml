@@ -1,0 +1,63 @@
+server:
+  port: 9092
+
+spring:
+  datasource:
+    name: designer-toy-dev
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/jjcy_designer_toy?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: jjcy123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    #druid相关配置
+    druid:
+      initial-size: 5
+      min-idle: 1
+      max-active: 20
+      max-wait: 600000
+      removeAbandoned: true
+      removeAbandonedTimeout: 20000
+      time-between-eviction-runs-millis: 600000
+      min-evictable-idle-time-millis: 300000
+      validation-query: select 1 from dual
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 50
+      filters: stat,slf4j,wall
+      filter:
+        slf4j:
+          enabled: true
+          statement-create-after-log-enabled: false
+          statement-executable-sql-log-enable: true
+          statement-execute-after-log-enabled: false
+          result-set-log-enabled: false
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*.xml
+  type-aliases-package: com.designer.toys.user.service.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 打印sql 只适合开发环境，上生产部开启
+    cache-enabled: false
+      #global-config:
+      # 全局配置
+      #db-config:
+      # 数据库配置
+    # id-type: auto
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
