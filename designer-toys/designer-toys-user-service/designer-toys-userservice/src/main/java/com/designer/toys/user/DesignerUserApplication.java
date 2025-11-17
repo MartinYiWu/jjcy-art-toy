@@ -7,7 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@MapperScan("com.designer.toys.user.service.dao")
+@MapperScan("com.designer.toys.user.dao")
 public class DesignerUserApplication {
     public static void main(String[] args) {
         SpringApplication.run(DesignerUserApplication.class, args);

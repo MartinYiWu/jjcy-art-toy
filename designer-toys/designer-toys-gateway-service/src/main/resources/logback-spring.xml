@@ -12,9 +12,9 @@
     
     <!-- 文件输出 -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_FILE:-logs/designer-toys-user-service.log}</file>
+        <file>${LOG_FILE:-logs/designer-toys-gateway-service.log}</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_FILE:-logs/designer-toys-user-service}.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <fileNamePattern>${LOG_FILE:-logs/designer-toys-gateway-service}.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
             <maxFileSize>${LOG_FILE_MAX_SIZE:-100MB}</maxFileSize>
             <maxHistory>${LOG_FILE_MAX_HISTORY:-30}</maxHistory>
         </rollingPolicy>
@@ -37,7 +37,7 @@
     </root>
     
     <!-- 包级别日志配置 -->
-    <logger name="com.designer.toys.user" level="${LOG_LEVEL_GATEWAY:-DEBUG}" additivity="false">
+    <logger name="com.designer.toys.gateway" level="${LOG_LEVEL_GATEWAY:-DEBUG}" additivity="false">
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="ASYNC" />
     </logger>
