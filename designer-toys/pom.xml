@@ -31,9 +31,14 @@
         <mysql-connector.version>8.0.28</mysql-connector.version>
         <druid.version>1.2.8</druid.version>
         <mybatis-plus-boot-starter.version>3.4.3.4</mybatis-plus-boot-starter.version>
+        <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
         <lombok.version>1.18.20</lombok.version>
         <fastjson.version>1.2.83</fastjson.version>
         <hutool.version>5.3.5</hutool.version>
+        <swagger.version>2.9.2</swagger.version>
+        <freemarker.version>2.3.32</freemarker.version>
+        <commons-lang3.version>3.12</commons-lang3.version>
+
     </properties>
 
     <dependencyManagement>
@@ -107,17 +112,51 @@
                 <version>${spring-cloud.openfeign.version}</version>
             </dependency>
 
-<!--            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-loadbalancer</artifactId>
-                <version>${spring-cloud.version}</version>
-            </dependency>-->
-
             <!--- Hutool -->
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
+            </dependency>
+
+            <!-- Swagger 注解 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+
+            <!-- MyBatis-Plus 代码生成器 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-core</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <!-- Freemarker 模板引擎 -->
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${freemarker.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
             </dependency>
 
         </dependencies>

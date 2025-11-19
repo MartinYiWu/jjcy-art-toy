@@ -16,6 +16,7 @@
     <modules>
         <module>designer-toys-common-web</module>
         <module>designer-toys-common-core</module>
+        <module>designer-toys-common-code-generator</module>
     </modules>
 
 </project>
