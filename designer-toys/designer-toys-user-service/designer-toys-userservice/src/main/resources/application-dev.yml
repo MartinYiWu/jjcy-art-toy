@@ -3,6 +3,12 @@ server:
 
 
 spring:
+  redis:
+    host: 10.13.3.227
+    port: 6001
+    password: Myjjcy#redis
+    timeout: 3000ms
+    database: 0
   datasource:
     name: designer-toy-dev
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -62,3 +68,11 @@ feign:
       default:
         connectTimeout: 5000
         readTimeout: 5000
+jwt:
+  secret: your-jwt-secret-key
+  expiration: 86400000  # 24小时
+  header: Authorization
+
+wechat:
+  appid: your_appid
+  secret: your_secret
